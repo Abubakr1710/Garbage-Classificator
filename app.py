@@ -7,6 +7,7 @@ from  torchvision import datasets, transforms, models
 import numpy as np
 from PIL import Image
 import io
+import pandas as pd
 st.set_option('deprecation.showfileUploaderEncoding', False)
 @st.cache(allow_output_mutation=True)
 
@@ -91,6 +92,12 @@ elif choice == 'Test':
         main()
 
 elif choice == 'Upcoming Updates':
-    
+    st.subheader('Locations of Garbage Houses')
+    df = pd.DataFrame(
+     np.random.randn(100, 2) / [50, 50] + [37.76, -122.4],
+     columns=['lat', 'lon'])
+
+    st.map(df)
+
 
 
