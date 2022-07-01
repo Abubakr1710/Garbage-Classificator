@@ -70,11 +70,27 @@ def load_image():
         return None
 
 
-st.title('Garbage Classification')
+#st.title('Garbage Classification')
 menu = ['Home', 'Test', 'Upcoming Updates']
 choice = st.sidebar.selectbox('Menu', menu)
 if choice == 'Home':
-    st.subheader('Home')
+    st.title('Garbage Classification')
+    image = 'box.jpeg'
+    st.image(image, width=700, caption='Waste management-Global problem')
+    st.write('Humans produce millions of tons of garbage everyday. Garbage needs to be segregated before it is taken out of houses. Sometimes people are so lazy to do like that. It is time to automate it')
+    st.subheader('Some informations about the data:')
+    image = 'type.png'
+    st.image(image, width=700)
+    st.write('Dataset contains 6 type of garbage such as:')
+    st.write('1.Cardboard')
+    st.write('2.Glass')
+    st.write('3.Metal')
+    st.write('4.Paper')
+    st.write('5.Plastic')
+    st.write('6.Trash')
+    st.write('Overall there are 2527 images in the dataset')
+
+
 
 elif choice == 'Test':
     st.subheader('test')
@@ -98,6 +114,10 @@ elif choice == 'Upcoming Updates':
      columns=['lat', 'lon'])
 
     st.map(df)
+
+    st.subheader('Real time garbage detection')
+    image = Image.open('realtime.png')
+    st.image(image, width=700)
 
 
 
