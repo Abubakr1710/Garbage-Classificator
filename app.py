@@ -51,9 +51,9 @@ def predict(model, categories, image):
 
     # pred top 5 labels from the text
     top5_prob, top5_catid = torch.topk(probabilities, 6)
-    with st.expander("Calculating results... "):
+    with st.expander("Percentage of Prediction: "):
         for i in range(top5_prob.size(0)):
-            st.write(categories[top5_catid[i]], top5_prob[i].item())
+            st.write(categories[top5_catid[i]], round(top5_prob[i].item(), 2), '%')
 
 
 
