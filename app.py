@@ -71,7 +71,7 @@ def load_image():
 
 
 #st.title('Garbage Classification')
-menu = ['Home', 'Test', 'Upcoming Updates']
+menu = ['Home', 'Test','Real Time test', 'Upcoming Updates']
 choice = st.sidebar.selectbox('Menu', menu)
 if choice == 'Home':
     st.title('Garbage Classification')
@@ -94,6 +94,21 @@ if choice == 'Home':
 
 elif choice == 'Test':
     st.subheader('test')
+    def main():
+
+        model = load_model()
+        categories = load_labels()
+        image = load_image()
+        result = st.button('Run on image')
+
+        if result:
+            predict(model, categories, image)
+
+    if __name__ == '__main__':
+        main()
+
+elif choice == 'Real Time test':
+    st.subheader('Real Time test')
     def main():
 
         model = load_model()
